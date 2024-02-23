@@ -1,18 +1,17 @@
 Unit Test Case:
 
 @Test
-public void testGetTotal() {
-    List<Integer> numbers = new ArrayList<>();
-    numbers.add(1);
-    numbers.add(2);
-    numbers.add(3);
-    numbers.add(4);
-    numbers.add(5);
-
-    Calculator calculator = new Calculator();
-    int total = calculator.getTotal(numbers);
-
-    assertEquals(15, total);
+public void testCalculateTotalPrice() {
+    // Arrange
+    Cart cart = new Cart();
+    cart.addItem(new Item("Apple", 2.0, 1));
+    cart.addItem(new Item("Orange", 1.5, 2));
+    
+    // Act
+    double totalPrice = cart.calculateTotalPrice();
+    
+    // Assert
+    assertEquals(5.0, totalPrice);
 }
 
-Code coverage: 100%
+Code Coverage: 100%
