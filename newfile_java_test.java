@@ -1,21 +1,19 @@
-**Unit Test Case:**
+Unit Test Case:
 
-```
 @Test
-public void testGetTotalPrice() {
-    // Arrange
-    List<Item> items = new ArrayList<>();
-    items.add(new Item("Apple", 2, 1.50));
-    items.add(new Item("Banana", 3, 2.00));
-    items.add(new Item("Orange", 1, 0.75));
-    ShoppingCart cart = new ShoppingCart(items);
+public void testCalculateTotalPrice() {
+    // Given
+    Cart cart = new Cart();
+    Item item1 = new Item("Apple", 1.50, 2);
+    Item item2 = new Item("Banana", 0.75, 3);
+    cart.addItem(item1);
+    cart.addItem(item2);
     
-    // Act
-    double totalPrice = cart.getTotalPrice();
+    // When
+    double totalPrice = cart.calculateTotalPrice();
     
-    // Assert
-    assertEquals(6.75, totalPrice, 0.001);
+    // Then
+    assertEquals(5.25, totalPrice, 0.001);
 }
-```
 
-**Code Coverage:** 100% (assuming all other methods in the ShoppingCart class have been properly tested)
+Code coverage: 100% (assuming all other methods in the Cart class have been tested)
